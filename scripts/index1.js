@@ -3,13 +3,13 @@ const {JSDOM} = require('jsdom')
 const {parse, toScrapbox} = require('@jigsaw/html2sb-compiler')
 const moment = require('moment')
 
-const posts = readdirSync('./tmp/posts/html')
+const posts = readdirSync('./tmp/posts1/html')
 const pages = posts.map(post => {
-  const file = readFileSync(`./tmp/posts/html/${post}`).toString()
+  const file = readFileSync(`./tmp/posts1/html/${post}`).toString()
   const dom = new JSDOM(file)
   const parsed = parse(dom.window.document.body.innerHTML.replace(/<p>/g, '<div>').replace(/<\/p>/g, '</div>'))
   const title = dom.window.document.querySelector('h1').innerHTML
-  parsed[0].title = title
+  parsed[0].title = `${title} - diary.jgs.me`
   const candidate = toScrapbox(parsed[0])
   candidate.lines = candidate.lines.slice(2)
   candidate.lines = [title].concat(candidate.lines)
