@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "time-machine",
+  "description": "Salvage yourself",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kbystk/time-machine.git"
+  },
+  "author": "Takaya Kobayashi <y@kbys.tk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbystk/time-machine/issues"
+  },
+  "homepage": "https://github.com/kbystk/time-machine#readme",
+  "dependencies": {
+    "@jigsaw/html2sb-compiler": "^1.0.5",
+    "jsdom": "^13.1.0",
+    "moment": "^2.23.0",
+    "puppeteer": "^1.11.0"
+  }
+}
